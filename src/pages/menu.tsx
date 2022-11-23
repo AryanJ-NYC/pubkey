@@ -14,12 +14,16 @@ const Menu = () => {
         width={1024}
         src="/images/menu/bar-menu.svg"
       />
-      <div className="border-8 border-red-400 flex flex-col gap-y-16 py-16 px-8">
+      <div
+        className="border-[16px] md:border-[32px] lg:border-[64px] flex flex-col gap-y-16 py-16 px-8"
+        id="menu-container"
+      >
         <div className="flex flex-col items-center md:flex-row-reverse md:items-start gap-8">
           <Image
             alt="A hot dog"
             className="md:w-1/2 lg:w-1/3"
             height={420}
+            priority
             src="/images/menu/hot-dogs.svg"
             width={269}
           />
@@ -183,6 +187,13 @@ const Menu = () => {
           </div>
         </div>
       </div>
+      <style jsx>{`
+        #menu-container {
+          border-image-repeat: repeat;
+          border-image-slice: 64;
+          border-image-source: url('/images/border.png');
+        }
+      `}</style>
     </div>
   );
 };
