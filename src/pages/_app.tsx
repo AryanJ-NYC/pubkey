@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <div
       className={clsx(
-        isLandingPage && 'bg-gray-300',
+        isLandingPage ? 'bg-gray-300' : 'bg-[#68aceb]',
         'flex flex-col h-screen justify-between font-sans'
       )}
     >
@@ -22,7 +22,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       {!isLandingPage && <Header />}
       <main
         className={clsx(
-          !isLandingPage && 'px-2 sm:px-8 xl:px-0 py-8 max-w-7xl mx-auto',
+          !isLandingPage && 'px-2 sm:px-8 xl:px-0 py-8 max-w-7xl mx-auto bg-[#68aceb]',
           'flex flex-col flex-grow w-full'
         )}
       >
